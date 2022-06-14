@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: box-service-deployment
+  labels:
+    app: box-service
+spec:
+  selector:
+    matchLabels:
+      app: box-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: box-service
+    spec:
+      containers:
+        - name: box-service
+          image: box-service:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: box-service
+spec:
+  selector:
+    app: box-service
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
