@@ -15,7 +15,7 @@ This demo app is to demonstrate how we can use [micronaut-gcp-logging](https://m
 ## How it works
 
 1. First We integrate with [micronaut-gcp-logging](https://micronaut-projects.github.io/micronaut-gcp/latest/guide/#logging) (you can refer to the official doc to see the integration details). 
-2. Then in order to make the log format to support both single line of log description message and custom json data which is collapsable in GCP Logging, we extend tow different types of Logback Layout/Encoder. One is for GCP Environment and another is for Local Development Environment
+2. Then in order to make the log format to support both single line of log description message and custom json data which is collapsable in GCP Logging, we extend two different types of Logback Layout/Encoder. One is for GCP Environment and another is for Local Development Environment
 3. At last in order to still support the current logging coding style, we add two extension functions to Logger to easily write logs as the old way, you can refer to the [Implementation Details](#implementation-details) section for more details.
 
 ## What it can do
