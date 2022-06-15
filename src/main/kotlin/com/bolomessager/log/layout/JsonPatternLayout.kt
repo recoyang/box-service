@@ -13,7 +13,7 @@ class JsonPatternLayout: PatternLayout() {
             val json = event.argumentArray[1]
             val prettyJsonString = mapper.writerWithDefaultPrettyPrinter()
                 .writeValueAsString(json)
-            string = "${string}jsonData: $prettyJsonString"
+            string = "${string}jsonData: $prettyJsonString\n"
         }
         return string
     }
